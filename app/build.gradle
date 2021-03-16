@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id "androidx.navigation.safeargs.kotlin"
+    id 'kotlin-kapt'
 }
 
 android {
@@ -33,6 +34,10 @@ android {
 
         }
 
+    }
+
+    buildFeatures {
+        dataBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -81,5 +86,15 @@ dependencies {
 
     //utils
     implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    // Room dependency
+    def room_version = "2.2.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // WorkManager dependency
+    def work_version = "1.0.1"
+    implementation "android.arch.work:work-runtime-ktx:$work_version"
 
 }

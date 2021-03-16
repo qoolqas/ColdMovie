@@ -1,4 +1,4 @@
-package com.qoolqas.moviedb.model.discover
+package com.raveendra.coldmovie.model.discover
 
 import com.google.gson.annotations.SerializedName
 
